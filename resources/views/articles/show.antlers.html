@@ -1,16 +1,14 @@
-<div class="max-w-5xl mx-auto relative mt-16 content">
-    {{ svg src="/assets/site/scratches" class="absolute text-gray-800 mt-8 top-0 left-0 w-20 hidden md:block" }}
-    <article class="lg:py-32 max-w-2xl mx-auto">
-        <h1>{{ title }}</h1>
-        <div class="bg-gray-800 inline-block text-sm mb-16 pr-4 pl-16 -ml-16 uppercase tracking-widest text-white py-1 rounded-r-full">
-            Published
-            {{ if topics }}
-                in {{ topics }}<a href="{{ url }}" class="text-teal-light no-underline hover:text-white">{{ title }}</a>{{ /topics }}
-            {{ /if }}
-            on {{ date format="M j, Y" }}
+<div class="bg-gray-50 text-gray-800">
+    <div class="relative py-16 overflow-hidden container mx-auto">
+        <div class="relative px-4 sm:px-6 lg:px-8">
+            <div class="text-lg max-w-prose mx-auto">
+                <h1 class="text-3xl font-bold text-center">{{ title }}</h1>
+            </div>
+            <div class="mt-6 prose prose-orange prose-lg mx-auto text-gray-800">
+                {{ content | widont }}
+            </div>
         </div>
-        <div class="content">
-            {{ content | widont }}
-        </div>
-    </article>
+    </div>
 </div>
+
+
