@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-require('laravel-mix-purgecss');
 
 /*
  |--------------------------------------------------------------------------
@@ -18,21 +17,7 @@ mix.postCss('resources/css/tailwind.css', 'public/css', [
   require('tailwindcss'),
   require('postcss-nested'),
   require('postcss-preset-env')({stage: 0})
-])
-    .browserSync({
-      proxy: 'localhost:8000',
-      files: [
-          "resources/css/*.css",
-          "resources/css/**/*.css",
-          "resources/views/*.antlers.html",
-          "resources/views/**/*.antlers.html"
-      ]
-    });
-
+]);
 if (mix.inProduction()) {
   mix.version();
-  mix.purgeCss({
-    enabled: true,
-    whitelistPatternsChildren: [/^content$/],
-  });
 }
