@@ -1,11 +1,11 @@
 {
     "private": true,
     "scripts": {
-     "development": "mix",
-      "watch": "mix watch",
-      "watch-poll": "mix watch -- --watch-options-poll=1000",
-      "hot": "mix watch --hot",
-      "production": "mix --production"
+      "development": "TAILWIND_MODE=build mix",
+      "watch": "TAILWIND_MODE=watch mix watch",
+      "watch-poll": "TAILWIND_MODE=watch mix watch -- --watch-options-poll=1000",
+      "hot": "TAILWIND_MODE=watch mix watch --hot",
+      "production": "TAILWIND_MODE=build mix --production"
     },
     "devDependencies": {
         "@tailwindcss/aspect-ratio": "^0.2.0",
