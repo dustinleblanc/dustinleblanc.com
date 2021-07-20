@@ -1,0 +1,63 @@
+title: 'Feature Set'
+fields:
+  -
+    handle: heading
+    field:
+      input_type: text
+      display: Heading
+      type: text
+      icon: text
+      listable: hidden
+  -
+    handle: lead_copy
+    field:
+      input_type: text
+      display: 'Lead Copy'
+      type: text
+      icon: text
+      listable: hidden
+  -
+    handle: features
+    field:
+      sets:
+        new_set:
+          display: 'New Set'
+          fields:
+            -
+              handle: icon
+              field:
+                mode: grid
+                restrict: false
+                allow_uploads: true
+                display: Icon
+                type: assets
+                icon: assets
+                listable: hidden
+                container: assets
+            -
+              handle: feature_name
+              field:
+                input_type: text
+                display: 'Feature Name'
+                type: text
+                icon: text
+                listable: hidden
+            -
+              handle: description
+              field:
+                display: Description
+                type: textarea
+                icon: textarea
+                listable: hidden
+      display: Features
+      type: replicator
+      icon: replicator
+      listable: hidden
+  -
+    handle: subheading
+    field:
+      input_type: text
+      display: Subheading
+      type: text
+      icon: text
+      listable: hidden

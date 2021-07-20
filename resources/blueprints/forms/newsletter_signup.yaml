@@ -1,0 +1,16 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: email
+        field:
+          placeholder: john@nightswatch.org
+          input_type: email
+          display: Email
+          type: text
+          icon: text
+          listable: hidden
+          validate:
+            - required
+            - email

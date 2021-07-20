@@ -4,21 +4,6 @@ sections:
     display: Main
     fields:
       -
-        handle: title
-        field:
-          type: text
-          required: true
-          character_limit: 0
-          localizable: false
-          display: Title
-      -
-        handle: subtitle
-        field:
-          character_limit: 0
-          type: text
-          localizable: false
-          display: Subtitle
-      -
         handle: content
         field:
           restrict: false
@@ -27,16 +12,33 @@ sections:
           escape_markup: true
           smartypants: false
           type: markdown
-          localizable: false
           display: Content
       -
         handle: template
         field:
           type: template
-          localizable: false
           display: Template
+      -
+        handle: excerpt
+        field:
+          display: Excerpt
+          type: textarea
+          icon: textarea
+          listable: hidden
+          validate:
+            - 'max:160'
   sidebar:
+    display: Sidebar
     fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          character_limit: 0
+          display: Title
+          validate:
+            - required
       -
         handle: slug
         field:
@@ -44,7 +46,7 @@ sections:
           required: true
           localizable: true
           validate:
-            - 'unique_entry_value:{collection},{id},{site}'
+            - required
       -
         handle: parent
         field:
@@ -54,3 +56,16 @@ sections:
           max_items: 1
           listable: false
           localizable: true
+      -
+        handle: show_in_nav
+        field:
+          display: 'Show in Nav'
+          type: toggle
+          icon: toggle
+          listable: hidden
+  hero:
+    display: Hero
+    fields:
+      -
+        import: hero
+        prefix: hero_

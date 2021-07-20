@@ -1,14 +1,48 @@
-<div class="bg-gray-50 text-gray-800">
-    <div class="relative py-16 overflow-hidden container mx-auto">
-        <div class="relative px-4 sm:px-6 lg:px-8">
-            <div class="text-lg max-w-prose mx-auto">
-                <h1 class="text-3xl font-bold text-center">{{ title }}</h1>
+<div class="relative pt-6 pb-16 md:pb-20 lg:pb-24 xl:pb-32">
+    {{ partial:nav }}
+    <article>
+        <div class="max-w-2xl mx-auto px-4 pt-12">
+            {{ author }}
+            <div class="my-6 flex items-center">
+                <div class="flex-shrink-0">
+                    {{ if avatar }}
+                    {{ glide:avatar square="200"}}
+                    <img class="h-24 w-24 rounded-full" src="{{ url }}" alt="{{ name }}">
+                    {{ /glide:avatar }}
+                    {{ /if }}
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm leading-5 font-medium text-gray-900">
+                        {{ name }}
+                    </p>
+                    <div class="flex text-sm leading-5 text-gray-500">
+                        <time datetime="{{ date format='Y-m-d'}}">
+                            {{ date format='M j, Y' }}
+                        </time>
+                        <span class="mx-1">
+                            &middot;
+                        </span>
+                        <span>
+                            {{ bard_content | flatten | join | strip_tags | read_time }} min read
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class="mt-6 prose prose-orange prose-lg mx-auto text-gray-800">
-                {{ content | widont }}
+            {{ /author }}
+            <div class="prose prose-xl text-gray-500">
             </div>
         </div>
-    </div>
+        {{ bard_content }}
+        {{ partial src="sets/{type}" }}
+        {{ /bard_content}}
+    </article>
+
+    {{ topics }}
+    {{ collection:articles as="articles" id:isnt="{page.id}" taxonomy:topics="{ id }" limit="3" sort="updated_at|desc"
+    }}
+    {{ if articles }}
+    {{ partial:articles/card-grid :articles="articles" heading="More on {{ title }}" :lead="summary"}}
+    {{ /if }}
+    {{ /collection:articles }}
+    {{ /topics }}
 </div>
-
-

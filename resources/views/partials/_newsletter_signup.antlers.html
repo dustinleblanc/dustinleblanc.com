@@ -1,0 +1,51 @@
+<!--
+  Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
+  Read the documentation to get started: https://tailwindui.com/documentation
+-->
+<div class="bg-white">
+    <div class="max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
+        <div class="px-6 py-6 bg-gray-800 rounded-lg md:py-12 md:px-12 lg:py-16 lg:px-16 xl:flex xl:items-center">
+            <div class="xl:w-0 xl:flex-1">
+                <h2 class="text-2xl leading-8 font-extrabold tracking-tight text-white sm:text-3xl sm:leading-9">
+                    Get updates straight to your inbox
+                </h2>
+                <p class="mt-3 max-w-3xl text-lg leading-6 text-gray-300" id="newsletter-headline">
+                    We'll send out an update about once a week with new posts from the blog and news about what we're up
+                    to.
+                </p>
+            </div>
+            <div class="mt-8 sm:w-full sm:max-w-md xl:mt-0 xl:ml-8">
+                {{ form:newsletter_signup class="sm:flex" aria-labelledby="newsletter-headline" }}
+                {{ if success }}
+                <div class="bg-green-300 text-white p-2 w-full">
+                    {{ success }}
+                </div>
+                {{ else }}
+                {{ if errors }}
+                <div class="bg-red-300 text-white p-2 w-full">
+                    {{ errors }}
+                    {{ value }}<br>
+                    {{ errors}}
+                </div>
+                {{ /if }}
+                <input aria-label="Email address" type="email" name="email" required
+                    class="appearance-none w-full px-5 py-3 border border-transparent text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 transition duration-150 ease-in-out"
+                    placeholder="john@nightswatch.org">
+                <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                    <button type="submit"
+                        class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-brand-orange hover:bg-orange-400 focus:outline-none focus:bg-indigo-400 transition duration-150 ease-in-out">
+                        Subscribe
+                    </button>
+                </div>
+                {{ /if }}
+                {{ /form:newsletter_signup }}
+                <p class="mt-3 text-sm leading-5 text-gray-300">
+                    We care about the protection of your data. Read our
+                    <a href="#" class="text-white font-medium underline">
+                        Privacy Policy.
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: first_name
+        field:
+          placeholder: Jaqen
+          input_type: text
+          display: 'First Name'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          validate:
+            - required
+      -
+        handle: last_name
+        field:
+          placeholder: 'H''ghar'
+          input_type: text
+          display: 'Last Name'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+      -
+        handle: email
+        field:
+          placeholder: jaqen@thefacelessmen.org
+          input_type: email
+          display: Email
+          type: text
+          icon: text
+          listable: hidden
+          validate:
+            - required
+            - email
+      -
+        handle: deets
+        field:
+          display: Details
+          type: textarea
+          icon: textarea
+          instructions: 'Tell us about your project'
+          listable: hidden
+          validate:
+            - required

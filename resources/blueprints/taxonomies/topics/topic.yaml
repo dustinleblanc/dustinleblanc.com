@@ -7,5 +7,24 @@ sections:
         handle: title
         field:
           type: text
-          localizable: false
+          required: true
           display: Title
+          validate:
+            - required
+      -
+        handle: summary
+        field:
+          display: summary
+          type: textarea
+          icon: textarea
+          listable: hidden
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          validate:
+            - required

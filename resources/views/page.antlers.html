@@ -1,0 +1,10 @@
+{{ partial:nav }}
+<div class="relative content">
+    {{ bard }}
+    {{ partial src="sets/{type}" }}
+    {{ /bard }}
+    <article class="px-4 py-12 max-w-screen-xl mx-auto prose lg:prose-xl">
+        {{ content | widont }}
+    </article>
+    {{ partial:partials/work_with_us_block }}
+</div>

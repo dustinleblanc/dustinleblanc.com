@@ -1,0 +1,13 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: your_name
+        field:
+          input_type: text
+          display: 'Your Name'
+          type: text
+          icon: text
+          instructions: 'Probably the name your mom calls you when she''s really proud of you'
+          listable: hidden

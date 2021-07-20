@@ -4,13 +4,48 @@ sections:
     display: Main
     fields:
       -
-        handle: title
+        handle: excerpt
         field:
-          type: text
-          required: true
-          character_limit: 0
-          localizable: false
-          display: Title
+          display: Excerpt
+          type: textarea
+          icon: textarea
+          listable: hidden
+          validate:
+            - 'max:160'
+      -
+        handle: bard
+        field:
+          always_show_set_button: true
+          sets:
+            feature_grid:
+              display: 'Feature Grid'
+              fields:
+                -
+                  import: feature_set
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          display: Bard
+          type: bard
+          icon: bard
+          listable: hidden
       -
         handle: content
         field:
@@ -20,16 +55,24 @@ sections:
           escape_markup: true
           smartypants: false
           type: markdown
-          localizable: false
           display: Content
       -
         handle: template
         field:
           type: template
-          localizable: false
           display: Template
   sidebar:
+    display: Sidebar
     fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          character_limit: 0
+          display: Title
+          validate:
+            - required
       -
         handle: slug
         field:
@@ -37,7 +80,7 @@ sections:
           required: true
           localizable: true
           validate:
-            - 'unique_entry_value:{collection},{id},{site}'
+            - required
       -
         handle: parent
         field:
@@ -47,3 +90,16 @@ sections:
           max_items: 1
           listable: false
           localizable: true
+      -
+        handle: show_in_nav
+        field:
+          display: 'Show in Nav'
+          type: toggle
+          icon: toggle
+          listable: hidden
+  hero:
+    display: Hero
+    fields:
+      -
+        import: hero
+        prefix: hero_

@@ -1,23 +1,44 @@
 <!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ title }} — {{ settings:site_name }}</title>
-        <meta name="description" content="{{ excerpt ?? title }}">
-        <meta name="theme-color" content="FF4900">
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-        <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-        <link rel="icon" type="image/png" href="/favicon.png">
-        <script src="{{ mix src='/js/site.js' }}"></script>
-    </head>
-    <body class="bg-orange-600 text-white">
-        {{ partial:nav }}
-        <main>
-            {{ template_content }}
-        </main>
-        {{ partial:footer }}
-    </body>
+<html lang="{{ site_short_locale ?? 'en' }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }} — {{ settings:site_name }}</title>
+    <meta name="description"
+        content="{{ excerpt ?? content | strip_tags | safe_truncate:160 ?? hero_lead_copy | safe_truncate:160 }}">
+    <meta name="theme-color" content="#F26522">
+    <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
+    <script src="{{ mix src='/js/site.js' }}"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f26522">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@UnrealistTech" />
+    <meta property="og:url" content="{{ permalink }}" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ excerpt }}" />
+    {{ if featured_image }}
+    {{ featured_image }}
+    <meta property="og:image" content="{{ permalink }}" />
+    {{ /featured_image }}
+    {{ /if }}
+    {{ if environment === "production" }}
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script src="https://cdn.usefathom.com/script.js" data-site="FNQMOYCB" defer></script>
+    <!-- / Fathom -->
+    {{ /if }}
+    {{ livewire:styles }}
+</head>
+
+<body class="bg-white font-sans leading-normal text-grey-800" x-data="{ showMobileNav: false }">
+    {{ template_content }}
+    {{ partial:footer }}
+    {{ livewire:scripts }}
+</body>
+
 </html>

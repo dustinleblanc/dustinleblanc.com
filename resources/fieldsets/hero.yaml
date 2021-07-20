@@ -1,0 +1,29 @@
+title: Hero
+fields:
+  -
+    handle: heading
+    field:
+      input_type: text
+      display: Heading
+      type: text
+      listable: hidden
+  -
+    handle: lead_copy
+    field:
+      display: 'Lead Copy'
+      type: textarea
+      listable: hidden
+  -
+    handle: image
+    field:
+      mode: grid
+      restrict: false
+      allow_uploads: true
+      display: Image
+      type: assets
+      instructions: 'Use something clear to see even at a fairly small size, landscape orientation'
+      listable: hidden
+      container: assets
+  -
+    import: call_to_action
+    prefix: cta_

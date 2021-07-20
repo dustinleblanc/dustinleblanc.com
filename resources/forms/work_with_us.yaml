@@ -1,0 +1,8 @@
+title: 'Work With Us'
+honeypot: cheese
+email:
+  -
+    to: dustin@unreal.ist
+    subject: 'New Work With Us Submission!'
+    html: email
+    text: default

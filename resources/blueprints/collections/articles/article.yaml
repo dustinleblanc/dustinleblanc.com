@@ -9,16 +9,8 @@ sections:
           type: text
           required: true
           display: Title
-      -
-        handle: content
-        field:
-          type: markdown
-          display: Content
-          restrict: false
-          automatic_line_breaks: true
-          automatic_links: false
-          escape_markup: false
-          smartypants: false
+          validate:
+            - required
       -
         handle: excerpt
         field:
@@ -31,7 +23,71 @@ sections:
           type: users
           display: Author
           default: current
+      -
+        handle: bard_content
+        field:
+          always_show_set_button: true
+          sets:
+            centered_content:
+              display: 'Centered Content'
+              fields:
+                -
+                  handle: sub_heading
+                  field:
+                    input_type: text
+                    display: 'Sub Heading'
+                    type: text
+                    listable: hidden
+                -
+                  handle: heading
+                  field:
+                    input_type: text
+                    display: Heading
+                    type: text
+                    listable: hidden
+                -
+                  handle: lead_copy
+                  field:
+                    input_type: text
+                    display: 'Lead Copy'
+                    type: text
+                    listable: hidden
+                -
+                  handle: main_content
+                  field:
+                    restrict: false
+                    automatic_line_breaks: true
+                    automatic_links: false
+                    escape_markup: false
+                    smartypants: false
+                    display: 'Main Content'
+                    type: markdown
+                    listable: hidden
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: true
+          fullscreen: true
+          allow_source: true
+          display: 'Bard Content'
+          type: bard
+          listable: true
   sidebar:
+    display: Sidebar
     fields:
       -
         handle: slug
@@ -40,17 +96,27 @@ sections:
           required: true
           localizable: true
           validate:
-            - 'unique_entry_value:{collection},{id},{site}'
+            - required
       -
         handle: date
         field:
           type: date
           required: true
+          validate:
+            - required
       -
         handle: topics
         field:
           type: terms
           taxonomies:
             - topics
-          display: Topics
+          display: Topic
           mode: select
+          listable: hidden
+          max_items: 1
+  featured_image:
+    display: 'Featured Image'
+    fields:
+      -
+        import: featured_image
+        prefix: featured_

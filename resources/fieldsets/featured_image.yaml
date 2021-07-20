@@ -1,0 +1,19 @@
+title: 'Featured Image'
+fields:
+  -
+    handle: image
+    field:
+      mode: grid
+      restrict: false
+      allow_uploads: true
+      display: Image
+      type: assets
+      listable: hidden
+  -
+    handle: attribution
+    field:
+      placeholder: 'Picture by Frank'
+      input_type: text
+      display: Attribution
+      type: text
+      listable: hidden

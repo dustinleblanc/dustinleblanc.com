@@ -1,8 +1,9 @@
 ---
+id: b9e4bfe3-9c12-4553-b7ef-f43c22ffaa63
+blueprint: home
 title: Articles
 template: articles.index
-updated_by: 96300192-873c-4615-b992-157508a8d7c5
-updated_at: 1579283552
-id: b9e4bfe3-9c12-4553-b7ef-f43c22ffaa63
+updated_by: af6534e7-8465-4176-9b6e-bab30252c649
+updated_at: 1626778541
+show_in_nav: true
 ---
-These are my various writings. Some might say they are cool.

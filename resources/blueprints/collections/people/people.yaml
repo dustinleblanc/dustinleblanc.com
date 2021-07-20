@@ -1,0 +1,67 @@
+title: People
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          display: Name
+          listable: hidden
+          input_type: text
+      -
+        handle: professional_title
+        field:
+          type: text
+          placeholder: 'Chief Dog Walker'
+          input_type: text
+          display: Title
+          instructions: 'What we we say this person does around here?'
+          listable: hidden
+          validate:
+            - required
+      -
+        handle: summary
+        field:
+          display: Summary
+          type: textarea
+          listable: hidden
+      -
+        handle: bio
+        field:
+          type: markdown
+          localizable: true
+          display: Bio
+          instructions: 'Tell is some fun things about this humble human'
+          listable: hidden
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: false
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: portrait
+        field:
+          mode: grid
+          container: assets
+          restrict: false
+          allow_uploads: true
+          display: Portrait
+          type: assets
+          instructions: 'Upload a headshot of this beautiful person, make sure to give them a decent amount of space around their noggin for cropping'
+          listable: hidden
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
