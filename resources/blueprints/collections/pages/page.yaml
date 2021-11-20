@@ -22,6 +22,11 @@ sections:
               fields:
                 -
                   import: feature_set
+            centered_content:
+              display: 'Centered Content'
+              fields:
+                -
+                  import: centered_content
           buttons:
             - h2
             - h3
@@ -46,6 +51,8 @@ sections:
           type: bard
           icon: bard
           listable: hidden
+          enable_input_rules: true
+          enable_paste_rules: true
       -
         handle: content
         field:
