@@ -9,4 +9,5 @@
     {{ collection:articles as="articles" limit="3" }}
     {{ partial:articles/card-grid :articles="articles" heading="The latest from the blog" lead="Thoughts on things" }}
     {{ /collection:articles }}
+    {{ partial:partials/newsletter_signup }}
 </div>

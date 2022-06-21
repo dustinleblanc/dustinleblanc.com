@@ -1,29 +1,16 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
 
 module.exports = {
-  mode: 'jit',
-  purge: {
-    content: [
-      './resources/**/*.antlers.html',
-      './resources/**/*.blade.php',
-      './content/**/*.md'
-    ],
-    options: {
-      whitelistPatternsChildren: [
-        /^content$/,
-      ]
-    }
-  },
+  content: [
+    './resources/**/*.antlers.html',
+    './resources/**/*.blade.php',
+    './content/**/*.md'
+  ],
   theme: {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
-      colors: {
-        rose: colors.rose,
-        orange: colors.orange,
-      }
     },
   },
   plugins: [
