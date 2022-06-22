@@ -4,18 +4,16 @@
     "keywords": ["statamic", "cms", "starter", "flat file", "laravel"],
     "type": "project",
     "require": {
-        "fideloper/proxy": "^4.0",
-        "laravel/framework": "^8.0",
+        "laravel/framework": "^9.0",
         "laravel/tinker": "^2.0",
         "pecotamic/sitemap": "^1.2",
-        "statamic/cms": "^3",
-        "statamic/ssg": "^0.9.0"
+        "statamic/cms": "^3"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
-        "facade/ignition": "^2.3.6",
+        "spatie/laravel-ignition": "^1.0",
         "filp/whoops": "^2.0",
-        "nunomaduro/collision": "^5.0",
+        "nunomaduro/collision": "^6.1",
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
         "phpunit/phpunit": "^9.0"

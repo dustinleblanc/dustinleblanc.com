@@ -7,7 +7,8 @@
                 <div class="flex-shrink-0">
                     {{ if avatar }}
                     {{ glide:avatar square="200"}}
-                    <img class="h-24 w-24 rounded-full" src="{{ url }}" alt="{{ name }}">
+                    <img class="h-24 w-24 rounded-full" src="{{ url }}"
+                        alt="{{ name }}">
                     {{ /glide:avatar }}
                     {{ /if }}
                 </div>
@@ -23,7 +24,8 @@
                             &middot;
                         </span>
                         <span>
-                            {{ bard_content | flatten | join | strip_tags | read_time }} min read
+                            {{ bard_content | raw | flatten | join | strip_tags | read_time }}
+                            min read
                         </span>
                     </div>
                 </div>
@@ -42,7 +44,8 @@
     {{ collection:articles as="articles" id:isnt="{page.id}" taxonomy:topics="{ id }" limit="3" sort="updated_at|desc"
     }}
     {{ if articles }}
-    {{ partial:articles/card-grid :articles="articles" heading="More on {{ title }}" :lead="summary"}}
+    {{ partial:articles/card-grid :articles="articles" heading="More on {{ title }}"
+    :lead="summary"}}
     {{ /if }}
     {{ /collection:articles }}
     {{ /topics }}
