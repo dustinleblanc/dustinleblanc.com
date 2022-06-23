@@ -41,7 +41,7 @@
     </article>
 
     {{ topics }}
-    {{ collection:articles as="articles" id:isnt="{page.id}" taxonomy:topics="{ id }" limit="3" sort="updated_at|desc"
+    {{ collection:articles as="articles" id:isnt="{page.id}" taxonomy:topics="{ id }" limit="3" sort="updated_at:desc"
     }}
     {{ if articles }}
     {{ partial:articles/card-grid :articles="articles" heading="More on {{ title }}"
