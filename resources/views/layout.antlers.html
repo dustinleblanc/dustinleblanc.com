@@ -29,18 +29,19 @@
     {{ /if }}
     {{ if environment === "production" }}
     <!-- Fathom - beautiful, simple website analytics -->
-    <script src="https://cdn.usefathom.com/script.js" data-site="FNQMOYCB" defer></script>
+    <script src="https://cdn.usefathom.com/script.js" data-site="FNQMOYCB"
+        defer></script>
     <!-- / Fathom -->
     {{ /if }}
-    {{ livewire:styles }}
+    {{ feedamic }}
 </head>
 
-<body class="bg-white font-sans leading-normal text-grey-800" x-data="{ showMobileNav: false }">
+<body class="bg-white font-sans leading-normal text-grey-800"
+    x-data="{ showMobileNav: false }">
     {{ template_content }}
     <div class="container mx-auto flex items-center content-center">
     </div>
     {{ partial:footer }}
-    {{ livewire:scripts }}
 </body>
 
 </html>

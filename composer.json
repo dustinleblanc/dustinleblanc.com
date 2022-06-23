@@ -6,6 +6,7 @@
     "require": {
         "laravel/framework": "^9.0",
         "laravel/tinker": "^2.0",
+        "mitydigital/feedamic": "^2.1",
         "pecotamic/sitemap": "^1.2",
         "statamic/cms": "^3"
     },
