@@ -7,7 +7,7 @@
         "laravel/framework": "^9.0",
         "laravel/tinker": "^2.0",
         "mitydigital/feedamic": "^2.1",
-        "pecotamic/sitemap": "^1.2",
+        "mitydigital/sitemapamic": "^2.1",
         "statamic/cms": "^3"
     },
     "require-dev": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "10dfc0d2b87baf5b7719de82b7f2cb6c",
+    "content-hash": "07fb3fcda53bbc39537dd1bf08b7594e",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -2796,6 +2796,60 @@
             "time": "2022-05-15T23:41:35+00:00"
         },
         {
+            "name": "mitydigital/sitemapamic",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mitydigital/statamic-sitemapamic.git",
+                "reference": "d961b43d8e64cf90ca0934c028740db10624aca0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mitydigital/statamic-sitemapamic/zipball/d961b43d8e64cf90ca0934c028740db10624aca0",
+                "reference": "d961b43d8e64cf90ca0934c028740db10624aca0",
+                "shasum": ""
+            },
+            "require": {
+                "statamic/cms": "^3.3"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "statamic": {
+                    "name": "Sitemapamic",
+                    "description": "Adds an XML sitemap to a Statamic site."
+                },
+                "laravel": {
+                    "providers": [
+                        "MityDigital\\Sitemapamic\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MityDigital\\Sitemapamic\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marty Friedel"
+                }
+            ],
+            "description": "An XML sitemap generator for Statamic 3 that includes all collections and related taxonomy pages.",
+            "keywords": [
+                "Sitemap",
+                "statamic"
+            ],
+            "support": {
+                "issues": "https://github.com/mitydigital/statamic-sitemapamic/issues",
+                "source": "https://github.com/mitydigital/statamic-sitemapamic/tree/2.1.1"
+            },
+            "time": "2022-05-26T06:47:02+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "2.7.0",
             "source": {
@@ -3198,62 +3252,6 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/v4.14.0"
             },
             "time": "2022-05-31T20:59:12+00:00"
-        },
-        {
-            "name": "pecotamic/sitemap",
-            "version": "1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pecotamic/sitemap.git",
-                "reference": "1732640ebbff2a28a4ab58d03eaac94687ffd4ff"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pecotamic/sitemap/zipball/1732640ebbff2a28a4ab58d03eaac94687ffd4ff",
-                "reference": "1732640ebbff2a28a4ab58d03eaac94687ffd4ff",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.4 || ^7.0 || ^8.0",
-                "statamic/cms": "^3.0.0"
-            },
-            "type": "statamic-addon",
-            "extra": {
-                "statamic": {
-                    "name": "Pecotamic Sitemap",
-                    "description": "Sitemap addon"
-                },
-                "laravel": {
-                    "providers": [
-                        "Pecotamic\\Sitemap\\ServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Pecotamic\\Sitemap\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Werner Freytag",
-                    "email": "wf@pecora.de"
-                }
-            ],
-            "description": "Simple sitemap addon for Statamic v3",
-            "keywords": [
-                "Sitemap",
-                "statamic"
-            ],
-            "support": {
-                "issues": "https://github.com/pecotamic/sitemap/issues",
-                "source": "https://github.com/pecotamic/sitemap/tree/1.4.0"
-            },
-            "time": "2022-05-17T09:23:40+00:00"
         },
         {
             "name": "phpoption/phpoption",
