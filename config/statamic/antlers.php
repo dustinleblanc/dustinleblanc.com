@@ -39,9 +39,7 @@ return [
     |
     */
 
-    'guardedTags' => [
-
-    ],
+    'guardedTags' => [],
 
     /*
     |--------------------------------------------------------------------------
@@ -53,8 +51,6 @@ return [
     |
     */
 
-    'guardedModifiers' => [
-
-    ],
+    'guardedModifiers' => [],
 
 ];

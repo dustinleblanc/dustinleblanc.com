@@ -2,7 +2,8 @@
     {{ if image }}
     {{ glide:image fit="crop_focal" width="515" height="192" }}
     <div class="flex-shrink-0">
-        <img class="h-48 w-full object-cover" src="{{ url }}" alt="{{ alt ?? '' }}">
+        <img class="h-48 w-full object-cover" src="{{ url }}"
+            alt="{{ alt ?? '' }}">
     </div>
     {{ /glide:image }}
     {{ /if }}
@@ -29,7 +30,8 @@
             <div class="flex-shrink-0">
                 {{ if avatar }}
                 {{ glide:avatar square="100"}}
-                <img class="h-10 w-10 rounded-full" src="{{ url }}" alt="{{ alt }}">
+                <img class="h-10 w-10 rounded-full" src="{{ url }}"
+                    alt="{{ alt }}">
                 {{ /glide:avatar }}
                 {{ /if }}
             </div>
@@ -45,7 +47,8 @@
                         &middot;
                     </span>
                     <span>
-                        {{ bard_content | flatten | join | strip_tags | read_time }} min read
+                        {{ bard_content | raw | flatten | join | strip_tags | read_time }}
+                        min read
                     </span>
                 </div>
             </div>
