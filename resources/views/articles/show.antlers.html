@@ -24,7 +24,7 @@
                             &middot;
                         </span>
                         <span>
-                            {{ bard_content | raw | flatten | join | strip_tags | read_time }}
+                            {{ content | read_time }}
                             min read
                         </span>
                     </div>
@@ -34,9 +34,29 @@
             <div class="prose prose-xl text-gray-500">
             </div>
         </div>
-        {{ bard_content }}
-        {{ partial src="sets/{type}" }}
-        {{ /bard_content}}
+        <div class="relative px-4 sm:px-6 lg:px-8">
+            <div class="text-lg max-w-prose mx-auto">
+                <h1
+                    class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    {{ title }}</h1>
+                {{ if lead_text }}
+                <p class="mt-8 text-xl text-gray-500 leading-8">{{ lead_text }}
+                </p>
+                {{ /if }}
+            </div>
+            <div class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
+                {{ if featured_image }}
+                <figure>
+                    {{ glide:featured_image }}
+                    <img src="{{ url }}" alt="{{ alt ?? ''  }}"
+                        class="w-full rounded-lg shadow-lg">
+                    {{ /glide:featured_image }}
+                    <figcaption>{{ featured_attribution }}</figcaption>
+                </figure>
+                {{ /if }}
+                {{ content }}
+            </div>
+        </div>
         {{ partial:partials/newsletter_signup }}
     </article>
 
